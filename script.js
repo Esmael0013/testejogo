@@ -90,8 +90,11 @@ function spawnObjects() {
     // Detecta quando o objeto atinge o final da tela
     object.addEventListener('animationend', () => {
       if (object.parentElement) {
-        missed++; // Incrementa erros se o objeto atingir o final
-        updateStats();
+        // Só adiciona erro se o objeto ainda não foi removido
+        if (currentObjects.includes(object)) {
+          missed++; // Incrementa erros se o objeto atingir o final
+          updateStats();
+        }
         object.remove(); // Remove o objeto ao atingir o final
         currentObjects = currentObjects.filter(item => item !== object); // Remove da lista
         checkGameOver();
@@ -101,7 +104,7 @@ function spawnObjects() {
 
   // Aumenta a dificuldade com o tempo
   setInterval(() => {
-    if (gameRunning && speed > 1000) speed -= 50;
+    if (gameRunning && speed > 1500) speed -= 50; // Reduz a velocidade de forma mais gradual
   }, 5000);
 }
 
