@@ -59,17 +59,15 @@ body {
 }
 
 .special-item {
-
-    background: url('img/1.png') no-repeat center center; /* Caminho para a imagem */
-    background-size: cover; /* Faz a imagem se ajustar ao tamanho do objeto */
-    width: 50px; /* Ajuste o tamanho conforme necessário */
-    height: 50px; /* Ajuste o tamanho conforme necessário */
-    border-radius: 50%; /* Forma circular */
-    position: absolute;
-    top: 0;
-    left: 0;
-    animation: fall 3s linear forwards; /* Animação de queda */
-
+  background: url('img/1.png') no-repeat center center; /* Caminho para a imagem */
+  background-size: cover; /* Faz a imagem se ajustar ao tamanho do objeto */
+  width: 50px; /* Ajuste o tamanho conforme necessário */
+  height: 50px; /* Ajuste o tamanho conforme necessário */
+  border-radius: 50%; /* Forma circular */
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: fall 3s linear forwards; /* Animação de queda */
 }
 
 .object1 {
@@ -96,7 +94,7 @@ body {
   animation: fall 3s linear forwards; /* Animação de queda */
 }
 
-.object3 {
+.object {
   background: url('img/5.png') no-repeat center center; /* Caminho para a imagem */
   background-size: cover; /* Faz a imagem se ajustar ao tamanho do objeto */
   width: 50px; /* Ajuste o tamanho conforme necessário */
@@ -147,5 +145,81 @@ body {
   }
   100% {
     top: 400px;
+  }
+}
+
+/* Adaptação para telas pequenas */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  #game-container {
+    width: 90%;
+    height: 90vh;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .falling-object {
+    width: 40px;
+    height: 40px;
+  }
+
+  .special-item, .object1, .object2, .object {
+    width: 40px;
+    height: 40px;
+  }
+
+  #start-btn {
+    font-size: 1rem;
+    padding: 12px 25px;
+  }
+
+  #restart-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  #game-over {
+    font-size: 16px;
+    padding: 15px;
+  }
+}
+
+/* Adaptação para telas menores que 480px (smartphones pequenos) */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 12px;
+  }
+
+  #game-container {
+    width: 95%;
+    height: 85vh;
+  }
+
+  .falling-object {
+    width: 35px;
+    height: 35px;
+  }
+
+  .special-item, .object1, .object2, .object {
+    width: 35px;
+    height: 35px;
+  }
+
+  #start-btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  #restart-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  #game-over {
+    font-size: 14px;
+    padding: 10px;
   }
 }
