@@ -1,0 +1,151 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #1a1a1a, #333333);
+  margin: 0; /* Remove margens padrão */
+  padding: 0;
+  color: white;
+  text-align: center;
+  height: 100vh; /* Garante que o fundo cubra toda a tela */
+  overflow: hidden; /* Remove barras de rolagem desnecessárias */
+}
+
+#game-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  background: #444;
+  padding: 10px;
+  font-size: 1.2rem;
+}
+
+#game-over {
+  display: none; /* Inicialmente oculto */
+  position: fixed; /* Fixa no centro da tela */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centraliza a tela de Game Over */
+  z-index: 1000; /* Camada mais alta */
+  text-align: center;
+  font-size: 20px;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+#play-area {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, #a3cef1, #f9f7d9);
+  overflow: hidden;
+  z-index: 1; /* Camada abaixo da tela de Game Over */
+}
+
+.falling-object {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  animation: fall 3s linear;
+  cursor: pointer;
+}
+
+.special-item {
+
+    background: url('img/1.png') no-repeat center center; /* Caminho para a imagem */
+    background-size: cover; /* Faz a imagem se ajustar ao tamanho do objeto */
+    width: 50px; /* Ajuste o tamanho conforme necessário */
+    height: 50px; /* Ajuste o tamanho conforme necessário */
+    border-radius: 50%; /* Forma circular */
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: fall 3s linear forwards; /* Animação de queda */
+
+}
+
+.object1 {
+  background: url('Cópia\ de\ Blue\ Minimalist\ Instagram\ Profile\ Picture.jpg') no-repeat center center; /* Caminho para a imagem */
+  background-size: cover; /* Faz a imagem se ajustar ao tamanho do objeto */
+  width: 50px; /* Ajuste o tamanho conforme necessário */
+  height: 50px; /* Ajuste o tamanho conforme necessário */
+  border-radius: 50%; /* Forma circular */
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: fall 3s linear forwards; /* Animação de queda */
+}
+
+.object2 {
+  background: url('img/6.png') no-repeat center center; /* Caminho para a imagem */
+  background-size: cover; /* Faz a imagem se ajustar ao tamanho do objeto */
+  width: 50px; /* Ajuste o tamanho conforme necessário */
+  height: 50px; /* Ajuste o tamanho conforme necessário */
+  border-radius: 50%; /* Forma circular */
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: fall 3s linear forwards; /* Animação de queda */
+}
+
+.object3 {
+  background: url('img/5.png') no-repeat center center; /* Caminho para a imagem */
+  background-size: cover; /* Faz a imagem se ajustar ao tamanho do objeto */
+  width: 50px; /* Ajuste o tamanho conforme necessário */
+  height: 50px; /* Ajuste o tamanho conforme necessário */
+  border-radius: 50%; /* Forma circular */
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: fall 3s linear forwards; /* Animação de queda */
+}
+
+#start-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px 30px;
+  background: #ff4747;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#start-btn:hover {
+  background: #ff5c5c;
+}
+
+#restart-btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#restart-btn:hover {
+  background: #34d058;
+}
+
+@keyframes fall {
+  0% {
+    top: -60px;
+  }
+  100% {
+    top: 400px;
+  }
+}
